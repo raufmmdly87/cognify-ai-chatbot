@@ -1,0 +1,30 @@
+{
+  "name": "cognify-ai-chatbot",
+  "version": "1.0.0",
+  "description": "Course project for Web Application Development (ACS-305).",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raufmmdly87/cognify-ai-chatbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raufmmdly87/cognify-ai-chatbot/issues"
+  },
+  "homepage": "https://github.com/raufmmdly87/cognify-ai-chatbot#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.1",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.3.0",
+    "prettier": "^3.8.1"
+  }
+}
