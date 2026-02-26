@@ -1,4 +1,3 @@
-/* 1) Genel sayfa ayarları */
 * {
   box-sizing: border-box;
 }
@@ -10,7 +9,6 @@ body {
   color: #111827;
 }
 
-/* 2) Üst başlık (header) */
 .header {
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
@@ -34,7 +32,6 @@ body {
   color: #6b7280;
 }
 
-/* 3) Sayfa ortalama ve chat kartı */
 .page {
   max-width: 720px;
   margin: 20px auto;
@@ -62,7 +59,6 @@ body {
   color: #374151;
 }
 
-/* 4) Mesaj alanı (scroll olur) */
 .messages {
   height: 360px;
   padding: 16px;
@@ -73,7 +69,6 @@ body {
   gap: 10px;
 }
 
-/* 5) Mesaj balonları */
 .message {
   max-width: 80%;
   padding: 10px 12px;
@@ -86,7 +81,6 @@ body {
   margin: 0;
 }
 
-/* Karşı taraf (sol) */
 .messageOther {
   align-self: flex-start;
   background: #ffffff;
@@ -94,14 +88,12 @@ body {
   color: #111827;
 }
 
-/* Ben (sağ) */
 .messageMe {
   align-self: flex-end;
   background: #111827;
   color: #ffffff;
 }
 
-/* 6) Mesaj yazma alanı */
 .composer {
   display: flex;
   gap: 10px;
@@ -124,7 +116,6 @@ body {
   border-color: #9ca3af;
 }
 
-/* 7) Send butonu */
 .sendBtn {
   height: 40px;
   padding: 0 14px;
@@ -144,7 +135,6 @@ body {
   transform: translateY(1px);
 }
 
-/* 8) Footer */
 .footer {
   max-width: 720px;
   margin: 10px auto 24px;
@@ -153,7 +143,6 @@ body {
   font-size: 12px;
 }
 
-/* 9) Sadece ekran okuyucular için label (görünmez) */
 .srOnly {
   position: absolute;
   width: 1px;
