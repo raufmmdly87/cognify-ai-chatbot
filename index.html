@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cognify Chat</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="headerInner">
+        <h1 class="brand">AI chat</h1>
+        <p class="tagline">Simple, fast conversations.</p>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="chatCard" aria-label="Chat">
+        <header class="chatHeader">
+          <h2 class="chatTitle">Conversation</h2>
+        </header>
+
+        <section class="messages" id="messages">
+          <div class="message messageOther">
+            <p>Hello! How can I help today?</p>
+          </div>
+
+          <div class="message messageMe">
+            <p>Can you introduce yourself?</p>
+          </div>
+
+          <div class="message messageOther">
+            <p>I’m Cognify. Nice to meet you.</p>
+          </div>
+        </section>
+
+        <form class="composer" id="composer">
+          <label class="srOnly" for="messageInput">Message</label>
+
+          <input
+            id="messageInput"
+            name="message"
+            type="text"
+            placeholder="Type a message..."
+            autocomplete="off"
+            required
+          />
+
+          <button class="sendBtn" type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 AI Chat</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

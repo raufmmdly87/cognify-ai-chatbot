@@ -1,0 +1,166 @@
+/* 1) Genel sayfa ayarları */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* 2) Üst başlık (header) */
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.headerInner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px 20px;
+}
+
+.brand {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.tagline {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* 3) Sayfa ortalama ve chat kartı */
+.page {
+  max-width: 720px;
+  margin: 20px auto;
+  padding: 0 12px;
+}
+
+.chatCard {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+}
+
+.chatHeader {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.chatTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* 4) Mesaj alanı (scroll olur) */
+.messages {
+  height: 360px;
+  padding: 16px;
+  background: #f9fafb;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 5) Mesaj balonları */
+.message {
+  max-width: 80%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  line-height: 1.35;
+  font-size: 14px;
+}
+
+.message p {
+  margin: 0;
+}
+
+/* Karşı taraf (sol) */
+.messageOther {
+  align-self: flex-start;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+}
+
+/* Ben (sağ) */
+.messageMe {
+  align-self: flex-end;
+  background: #111827;
+  color: #ffffff;
+}
+
+/* 6) Mesaj yazma alanı */
+.composer {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.composer input {
+  flex: 1;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.composer input:focus {
+  border-color: #9ca3af;
+}
+
+/* 7) Send butonu */
+.sendBtn {
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid #111827;
+  border-radius: 10px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sendBtn:hover {
+  opacity: 0.92;
+}
+
+.sendBtn:active {
+  transform: translateY(1px);
+}
+
+/* 8) Footer */
+.footer {
+  max-width: 720px;
+  margin: 10px auto 24px;
+  padding: 0 12px;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+/* 9) Sadece ekran okuyucular için label (görünmez) */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
