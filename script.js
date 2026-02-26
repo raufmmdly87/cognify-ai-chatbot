@@ -19,7 +19,6 @@ form.addEventListener('submit', (event) => {
 
 function displayMessage(message, sender) {
   const messageDiv = document.createElement('div');
-
   messageDiv.classList.add('message');
   messageDiv.classList.add(sender === 'me' ? 'messageMe' : 'messageOther');
 
@@ -31,5 +30,6 @@ function displayMessage(message, sender) {
 }
 
 function getReply(userMessage) {
+  void userMessage;
   return 'Thanks — message received.';
 }
