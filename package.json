@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Course project for Web Application Development (ACS-305).",
   "main": "index.js",
+  
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
