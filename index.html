@@ -11,17 +11,25 @@
 
   <body class="h-screen bg-[#0B1020] text-slate-100">
     <div class="flex h-screen">
-      <aside class="w-72 shrink-0 border-r border-white/5 bg-gradient-to-b from-[#0E1630] to-[#0B1020] p-4">
-        <button class="w-full rounded-xl bg-gradient-to-r from-[#1E3A8A] to-[#0A2A66] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1E3A8A]/20 hover:opacity-95 active:scale-[0.99] transition">
+      <aside
+        class="w-72 shrink-0 border-r border-white/5 bg-gradient-to-b from-[#0E1630] to-[#0B1020] p-4"
+      >
+        <button
+          class="w-full rounded-xl bg-gradient-to-r from-[#1E3A8A] to-[#0A2A66] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1E3A8A]/20 hover:opacity-95 active:scale-[0.99] transition"
+        >
           + New Chat
         </button>
 
         <div class="mt-5 space-y-2">
-          <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-sm font-medium text-slate-100 hover:bg-white/10 transition">
+          <div
+            class="rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-sm font-medium text-slate-100 hover:bg-white/10 transition"
+          >
             Image Processing
           </div>
 
-          <div class="rounded-xl border border-white/15 bg-white/10 px-3 py-3 text-sm font-semibold text-slate-100 shadow-sm">
+          <div
+            class="rounded-xl border border-white/15 bg-white/10 px-3 py-3 text-sm font-semibold text-slate-100 shadow-sm"
+          >
             Web Development Project
           </div>
         </div>
@@ -33,17 +41,27 @@
       </aside>
 
       <main class="flex min-w-0 flex-1 flex-col">
-        <header class="border-b border-white/5 bg-white/5 px-6 py-4 backdrop-blur">
-          <h1 class="text-sm font-semibold tracking-wide text-slate-100">Web Development Project</h1>
+        <header
+          class="border-b border-white/5 bg-white/5 px-6 py-4 backdrop-blur"
+        >
+          <h1 class="text-sm font-semibold tracking-wide text-slate-100">
+            Web Development Project
+          </h1>
           <p class="mt-0.5 text-[11px] text-slate-400"></p>
         </header>
 
-        <section id="messages-history" class="min-h-0 flex-1 overflow-y-auto px-6 py-6">
+        <section
+          id="messages-history"
+          class="min-h-0 flex-1 overflow-y-auto px-6 py-6"
+        >
           <div class="mx-auto w-full max-w-3xl space-y-4">
             <div class="flex justify-start">
               <chat-message role="assistant" class="max-w-[80%]">
-                <div class="rounded-2xl rounded-tl-md border border-white/10 bg-white/5 px-4 py-3 text-[13px] leading-relaxed text-slate-100 shadow-sm">
-                  Hey! If you are done with JS, we can design it with TailwindCSS.
+                <div
+                  class="rounded-2xl rounded-tl-md border border-white/10 bg-white/5 px-4 py-3 text-[13px] leading-relaxed text-slate-100 shadow-sm"
+                >
+                  Hey! If you are done with JS, we can design it with
+                  TailwindCSS.
                 </div>
                 <div class="mt-1 text-[10px] text-slate-500">12:04</div>
               </chat-message>
@@ -51,16 +69,22 @@
 
             <div class="flex justify-end">
               <chat-message role="user" class="max-w-[80%]">
-                <div class="rounded-2xl rounded-tr-md bg-gradient-to-r from-[#1E3A8A] to-[#0A2A66] px-4 py-3 text-[13px] leading-relaxed text-white shadow-lg shadow-[#1E3A8A]/20">
+                <div
+                  class="rounded-2xl rounded-tr-md bg-gradient-to-r from-[#1E3A8A] to-[#0A2A66] px-4 py-3 text-[13px] leading-relaxed text-white shadow-lg shadow-[#1E3A8A]/20"
+                >
                   Yep. We can replace CSS file to Tailwind.
                 </div>
-                <div class="mt-1 text-right text-[10px] text-slate-500">12:05</div>
+                <div class="mt-1 text-right text-[10px] text-slate-500">
+                  12:05
+                </div>
               </chat-message>
             </div>
 
             <div class="flex justify-start">
               <chat-message role="assistant" class="max-w-[80%]">
-                <div class="rounded-2xl rounded-tl-md border border-white/10 bg-white/5 px-4 py-3 text-[13px] leading-relaxed text-slate-100 shadow-sm">
+                <div
+                  class="rounded-2xl rounded-tl-md border border-white/10 bg-white/5 px-4 py-3 text-[13px] leading-relaxed text-slate-100 shadow-sm"
+                >
                   Nice. Can you share your index.html file with me?
                 </div>
                 <div class="mt-1 text-[10px] text-slate-500">12:06</div>
@@ -69,16 +93,25 @@
 
             <div class="flex justify-end">
               <chat-message role="user" class="max-w-[80%]">
-                <div class="rounded-2xl rounded-tr-md bg-gradient-to-r from-[#1E3A8A] to-[#0A2A66] px-4 py-3 text-[13px] leading-relaxed text-white shadow-lg shadow-[#1E3A8A]/20">
+                <div
+                  class="rounded-2xl rounded-tr-md bg-gradient-to-r from-[#1E3A8A] to-[#0A2A66] px-4 py-3 text-[13px] leading-relaxed text-white shadow-lg shadow-[#1E3A8A]/20"
+                >
                   Sure. I am gonna share it.
                 </div>
-                <div class="mt-1 text-right text-[10px] text-slate-500">12:06</div>
+                <div class="mt-1 text-right text-[10px] text-slate-500">
+                  12:06
+                </div>
               </chat-message>
             </div>
           </div>
         </section>
 
-        <form method="post" action="" id="messages-form" class="border-t border-white/5 bg-white/5 px-6 py-4 backdrop-blur">
+        <form
+          method="post"
+          action=""
+          id="messages-form"
+          class="border-t border-white/5 bg-white/5 px-6 py-4 backdrop-blur"
+        >
           <div class="mx-auto flex w-full max-w-3xl items-end gap-3">
             <textarea
               id="messages-form-input"
@@ -87,7 +120,7 @@
             ></textarea>
 
             <button
-            type="submit"
+              type="submit"
               class="shrink-0 rounded-2xl bg-gradient-to-r from-[#1E3A8A] to-[#0A2A66] px-5 py-3 text-[13px] font-semibold text-white shadow-lg shadow-[#1E3A8A]/20 hover:opacity-95 active:scale-[0.99] transition"
             >
               Send
