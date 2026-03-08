@@ -3,20 +3,21 @@
   "version": "1.0.0",
   "description": "Course project for Web Application Development (ACS-305).",
   "main": "index.js",
-  
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky install",
+    "prepare": "husky",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
-   "lint-staged": {
-    "*.{js,mjs,cjs,html,css,json,md}": ["prettier --write"],
-    "*.{js,mjs,cjs}": ["eslint ."]
+  "lint-staged": {
+    "*.{js,mjs,cjs,html,css,json,md}": [
+      "prettier --write"
+    ],
+    "*.{js,mjs,cjs}": [
+      "eslint --fix"
+    ]
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/raufmmdly87/cognify-ai-chatbot.git"
