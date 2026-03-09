@@ -4,7 +4,6 @@
     <title>Cognify Chat</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="components.js" type="text/javascript"></script>
   </head>
@@ -47,32 +46,36 @@
           <h1 class="text-sm font-semibold tracking-wide text-slate-100">
             Web Development Project
           </h1>
-          <p class="mt-0.5 text-[11px] text-slate-400"></p>
+          <p class="mt-0.5 text-[11px] text-slate-400">
+            Quick notes and streaming replies.
+          </p>
         </header>
 
         <section
           id="messages-history"
-          class="min-h-0 flex-1 overflow-y-auto px-6 py-6"
+          class="min-h-0 flex-1 overflow-y-auto px-8 py-8"
         >
-          <div class="mx-auto w-full max-w-3xl space-y-4">
+          <div
+            id="messages-list"
+            class="mx-auto w-full max-w-2xl space-y-4 px-2"
+          >
             <div class="flex justify-start">
-              <chat-message role="assistant" class="max-w-[80%]">
+              <chat-message role="assistant" class="max-w-[70%]">
                 <div
                   class="rounded-2xl rounded-tl-md border border-white/10 bg-white/5 px-4 py-3 text-[13px] leading-relaxed text-slate-100 shadow-sm"
                 >
-                  Hey! If you are done with JS, we can design it with
-                  TailwindCSS.
+                  Hey — send a message and I’ll reply as it streams in.
                 </div>
                 <div class="mt-1 text-[10px] text-slate-500">12:04</div>
               </chat-message>
             </div>
 
             <div class="flex justify-end">
-              <chat-message role="user" class="max-w-[80%]">
+              <chat-message role="user" class="max-w-[70%]">
                 <div
                   class="rounded-2xl rounded-tr-md bg-gradient-to-r from-[#1E3A8A] to-[#0A2A66] px-4 py-3 text-[13px] leading-relaxed text-white shadow-lg shadow-[#1E3A8A]/20"
                 >
-                  Yep. We can replace CSS file to Tailwind.
+                  Perfect. I’m testing the chat streaming now.
                 </div>
                 <div class="mt-1 text-right text-[10px] text-slate-500">
                   12:05
@@ -81,22 +84,22 @@
             </div>
 
             <div class="flex justify-start">
-              <chat-message role="assistant" class="max-w-[80%]">
+              <chat-message role="assistant" class="max-w-[70%]">
                 <div
                   class="rounded-2xl rounded-tl-md border border-white/10 bg-white/5 px-4 py-3 text-[13px] leading-relaxed text-slate-100 shadow-sm"
                 >
-                  Nice. Can you share your index.html file with me?
+                  Cool. Try a real question so we can see the reply build up.
                 </div>
                 <div class="mt-1 text-[10px] text-slate-500">12:06</div>
               </chat-message>
             </div>
 
             <div class="flex justify-end">
-              <chat-message role="user" class="max-w-[80%]">
+              <chat-message role="user" class="max-w-[70%]">
                 <div
                   class="rounded-2xl rounded-tr-md bg-gradient-to-r from-[#1E3A8A] to-[#0A2A66] px-4 py-3 text-[13px] leading-relaxed text-white shadow-lg shadow-[#1E3A8A]/20"
                 >
-                  Sure. I am gonna share it.
+                  Got it. Sending one now.
                 </div>
                 <div class="mt-1 text-right text-[10px] text-slate-500">
                   12:06
@@ -112,10 +115,10 @@
           id="messages-form"
           class="border-t border-white/5 bg-white/5 px-6 py-4 backdrop-blur"
         >
-          <div class="mx-auto flex w-full max-w-3xl items-end gap-3">
+          <div class="mx-auto flex w-full max-w-2xl items-end gap-3">
             <textarea
               id="messages-form-input"
-              class="min-h-[44px] max-h-32 w-full resize-none rounded-2xl border border-white/10 bg-[#0B1020]/60 px-4 py-3 text-[13px] text-slate-100 placeholder:text-slate-500 outline-none focus:border-red-400/40 focus:ring-2 focus:ring-red-500/20"
+              class="min-h-[44px] max-h-32 w-full resize-none rounded-2xl border border-white/10 bg-[#0B1020]/60 px-4 py-3 text-[13px] text-slate-100 placeholder:text-slate-500 outline-none focus:border-blue-400/40 focus:ring-2 focus:ring-blue-500/20"
               placeholder="Type your message here..."
             ></textarea>
 
@@ -130,6 +133,6 @@
       </main>
     </div>
 
-    <script src="action.js" type="module"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>
