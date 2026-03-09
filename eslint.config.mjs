@@ -12,5 +12,5 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
-  prettier, // ✅ en sonda olmalı
+  prettier,
 ]);
