@@ -1,6 +1,10 @@
 import ConversationList from './ConversationList';
 
-function Sidebar({ conversations, activeConversationId, onSelectConversation }) {
+function Sidebar({
+  conversations,
+  activeConversationId,
+  onSelectConversation,
+}) {
   return (
     <aside className="w-72 shrink-0 border-r border-white/5 bg-gradient-to-b from-[#0E1630] to-[#0B1020] p-4">
       <button className="w-full rounded-xl bg-gradient-to-r from-[#1E3A8A] to-[#0A2A66] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1E3A8A]/20 hover:opacity-95 active:scale-[0.99] transition">
