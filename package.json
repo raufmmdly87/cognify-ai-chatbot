@@ -6,16 +6,18 @@
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky install",
+    "prepare": "husky",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
-   "lint-staged": {
-    "*.{js,mjs,cjs,html,css,json,md}": ["prettier --write"],
-    "*.{js,mjs,cjs}": ["eslint ."]
+  "lint-staged": {
+    "*.{js,mjs,cjs,html,css,json,md}": [
+      "prettier --write"
+    ],
+    "*.{js,mjs,cjs}": [
+      "eslint --fix"
+    ]
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/raufmmdly87/cognify-ai-chatbot.git"
@@ -28,9 +30,11 @@
   },
   "homepage": "https://github.com/raufmmdly87/cognify-ai-chatbot#readme",
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.0.1",
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",

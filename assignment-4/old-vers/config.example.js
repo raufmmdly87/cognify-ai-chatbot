@@ -1,0 +1,1 @@
+export const OPENROUTER_API_KEY = 'PASTE_KEY_HERE';
