@@ -1,43 +1,30 @@
 {
   "name": "cognify-ai-chatbot",
   "version": "1.0.0",
-  "description": "Course project for Web Application Development (ACS-305).",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "prepare": "husky",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
-  "lint-staged": {
-    "*.{js,mjs,cjs,html,css,json,md}": [
-      "prettier --write"
-    ],
-    "*.{js,mjs,cjs}": [
-      "eslint --fix"
-    ]
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/raufmmdly87/cognify-ai-chatbot.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/raufmmdly87/cognify-ai-chatbot/issues"
-  },
-  "homepage": "https://github.com/raufmmdly87/cognify-ai-chatbot#readme",
   "devDependencies": {
     "@eslint/js": "^9.39.4",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.3.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
-    "prettier": "^3.8.1"
+    "globals": "^17.4.0",
+    "prettier": "^3.8.1",
+    "vite": "^8.0.1"
   }
 }
