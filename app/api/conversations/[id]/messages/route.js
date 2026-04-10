@@ -1,78 +1,69 @@
-let messagesDb = [
-  {
-    id: 'msg-1',
-    conversationId: 'conv-1',
-    role: 'assistant',
-    content: 'Welcome to the Image Processing chat.',
-    timestamp: '12:00',
-  },
-  {
-    id: 'msg-2',
-    conversationId: 'conv-1',
-    role: 'user',
-    content: 'Can you explain edge detection?',
-    timestamp: '12:01',
-  },
-  {
-    id: 'msg-3',
-    conversationId: 'conv-1',
-    role: 'assistant',
-    content: 'Edge detection highlights strong intensity changes in an image.',
-    timestamp: '12:02',
-  },
-  {
-    id: 'msg-4',
-    conversationId: 'conv-2',
-    role: 'assistant',
-    content: 'Hey — send a message and I’ll reply.',
-    timestamp: '12:04',
-  },
-  {
-    id: 'msg-5',
-    conversationId: 'conv-2',
-    role: 'user',
-    content: 'Perfect. I’m testing the chat now.',
-    timestamp: '12:05',
-  },
-  {
-    id: 'msg-6',
-    conversationId: 'conv-2',
-    role: 'assistant',
-    content: 'Cool. Try a real question.',
-    timestamp: '12:06',
-  },
-];
+import { prisma } from '@/lib/prisma';
 
-function getCurrentTime() {
-  return new Date().toLocaleTimeString([], {
-    hour: '2-digit',
-    minute: '2-digit',
-  });
+export async function GET(request, context) {
+  try {
+    const { id } = await context.params;
+    const conversationId = Number(id);
+
+    if (Number.isNaN(conversationId)) {
+      return Response.json(
+        { error: 'Invalid conversation id' },
+        { status: 400 }
+      );
+    }
+
+    const messages = await prisma.message.findMany({
+      where: {
+        conversationId,
+      },
+      orderBy: {
+        createdAt: 'asc',
+      },
+    });
+
+    return Response.json(messages);
+  } catch (error) {
+    return Response.json(
+      { error: 'Failed to fetch messages' },
+      { status: 500 }
+    );
+  }
 }
 
-export async function GET(request, { params }) {
-  const { id } = await params;
+export async function POST(request, context) {
+  try {
+    const { id } = await context.params;
+    const conversationId = Number(id);
+    const body = await request.json();
+    const { role, content } = body;
 
-  const filteredMessages = messagesDb.filter(
-    (message) => message.conversationId === id,
-  );
+    if (Number.isNaN(conversationId)) {
+      return Response.json(
+        { error: 'Invalid conversation id' },
+        { status: 400 }
+      );
+    }
 
-  return Response.json(filteredMessages);
-}
+    if (!role || !content) {
+      return Response.json(
+        { error: 'Role and content are required' },
+        { status: 400 }
+      );
+    }
 
-export async function POST(request, { params }) {
-  const { id } = await params;
-  const messageData = await request.json();
+    const message = await prisma.message.create({
+      data: {
+        role,
+        content,
+        conversationId,
+      },
+    });
 
-  const newMessage = {
-    id: `msg-${Date.now()}`,
-    conversationId: id,
-    role: messageData.role,
-    content: messageData.content,
-    timestamp: getCurrentTime(),
-  };
-
-  messagesDb.push(newMessage);
-
-  return Response.json(newMessage);
+    return Response.json(message, { status: 201 });
+  } catch (error) {
+    return Response.json(
+      { error: 'Failed to save message' },
+      { status: 500 }
+    );
+  }
 }

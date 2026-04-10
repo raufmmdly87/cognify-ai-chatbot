@@ -1,21 +1,36 @@
-'use client'; 
+'use client';
+
 import ConversationList from './ConversationList';
 
 function Sidebar({
   conversations,
   activeConversationId,
   onSelectConversation,
+  onCreateConversation,
+  onDeleteConversation,
+  onRenameConversation,
+  isCreatingConversation,
+  isDeletingConversation,
+  isRenamingConversation,
 }) {
   return (
     <aside className="w-72 shrink-0 border-r border-white/5 bg-gradient-to-b from-[#0E1630] to-[#0B1020] p-4">
-      <button className="w-full rounded-xl bg-gradient-to-r from-[#1E3A8A] to-[#0A2A66] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1E3A8A]/20 hover:opacity-95 active:scale-[0.99] transition">
-        + New Chat
+      <button
+        onClick={onCreateConversation}
+        disabled={isCreatingConversation}
+        className="w-full rounded-xl bg-gradient-to-r from-[#1E3A8A] to-[#0A2A66] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1E3A8A]/20 transition hover:opacity-95 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        {isCreatingConversation ? 'Creating...' : '+ New Chat'}
       </button>
 
       <ConversationList
         conversations={conversations}
         activeConversationId={activeConversationId}
         onSelectConversation={onSelectConversation}
+        onDeleteConversation={onDeleteConversation}
+        onRenameConversation={onRenameConversation}
+        isDeletingConversation={isDeletingConversation}
+        isRenamingConversation={isRenamingConversation}
       />
 
       <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-3">
