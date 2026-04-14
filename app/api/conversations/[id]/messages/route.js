@@ -1,4 +1,4 @@
-import { prisma } from '@/lib/prisma';
+import { createMessage, getMessages } from '@/lib/data/chat';
 
 export async function GET(request, context) {
   try {
@@ -6,26 +6,15 @@ export async function GET(request, context) {
     const conversationId = Number(id);
 
     if (Number.isNaN(conversationId)) {
-      return Response.json(
-        { error: 'Invalid conversation id' },
-        { status: 400 }
-      );
+      return Response.json({ error: 'Invalid conversation id' }, { status: 400 });
     }
 
-    const messages = await prisma.message.findMany({
-      where: {
-        conversationId,
-      },
-      orderBy: {
-        createdAt: 'asc',
-      },
-    });
-
+    const messages = await getMessages(conversationId);
     return Response.json(messages);
   } catch (error) {
     return Response.json(
-      { error: 'Failed to fetch messages' },
-      { status: 500 }
+      { error: error instanceof Error ? error.message : 'Failed to fetch messages' },
+      { status: 500 },
     );
   }
 }
@@ -37,33 +26,21 @@ export async function POST(request, context) {
     const body = await request.json();
     const { role, content } = body;
 
-    if (Number.isNaN(conversationId)) {
-      return Response.json(
-        { error: 'Invalid conversation id' },
-        { status: 400 }
-      );
+    if (Number.isNaN(conversationId) || !role || !content) {
+      return Response.json({ error: 'Invalid request' }, { status: 400 });
     }
 
-    if (!role || !content) {
-      return Response.json(
-        { error: 'Role and content are required' },
-        { status: 400 }
-      );
-    }
-
-    const message = await prisma.message.create({
-      data: {
-        role,
-        content,
-        conversationId,
-      },
+    const message = await createMessage({
+      conversationId,
+      role,
+      content,
     });
 
     return Response.json(message, { status: 201 });
   } catch (error) {
     return Response.json(
-      { error: 'Failed to save message' },
-      { status: 500 }
+      { error: error instanceof Error ? error.message : 'Failed to save message' },
+      { status: 500 },
     );
   }
 }

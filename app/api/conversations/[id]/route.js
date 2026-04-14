@@ -1,4 +1,7 @@
-import { prisma } from '@/lib/prisma';
+import {
+  deleteConversation,
+  renameConversation,
+} from '@/lib/data/chat';
 
 export async function PATCH(request, context) {
   try {
@@ -7,30 +10,16 @@ export async function PATCH(request, context) {
     const body = await request.json();
     const title = body?.title?.trim();
 
-    if (Number.isNaN(conversationId)) {
-      return Response.json(
-        { error: 'Invalid conversation id' },
-        { status: 400 }
-      );
+    if (Number.isNaN(conversationId) || !title) {
+      return Response.json({ error: 'Invalid request' }, { status: 400 });
     }
 
-    if (!title) {
-      return Response.json(
-        { error: 'Title is required' },
-        { status: 400 }
-      );
-    }
-
-    const updatedConversation = await prisma.conversation.update({
-      where: { id: conversationId },
-      data: { title },
-    });
-
+    const updatedConversation = await renameConversation(conversationId, title);
     return Response.json(updatedConversation);
   } catch (error) {
     return Response.json(
-      { error: 'Failed to rename conversation' },
-      { status: 500 }
+      { error: error instanceof Error ? error.message : 'Failed to rename conversation' },
+      { status: 500 },
     );
   }
 }
@@ -41,23 +30,15 @@ export async function DELETE(request, context) {
     const conversationId = Number(id);
 
     if (Number.isNaN(conversationId)) {
-      return Response.json(
-        { error: 'Invalid conversation id' },
-        { status: 400 }
-      );
+      return Response.json({ error: 'Invalid conversation id' }, { status: 400 });
     }
 
-    await prisma.conversation.delete({
-      where: {
-        id: conversationId,
-      },
-    });
-
+    await deleteConversation(conversationId);
     return Response.json({ success: true });
   } catch (error) {
     return Response.json(
-      { error: 'Failed to delete conversation' },
-      { status: 500 }
+      { error: error instanceof Error ? error.message : 'Failed to delete conversation' },
+      { status: 500 },
     );
   }
 }

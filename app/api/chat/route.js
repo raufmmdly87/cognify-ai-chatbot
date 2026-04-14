@@ -17,7 +17,7 @@ export async function POST(request) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'openai/gpt-4o-mini',
+      model: 'nvidia/nemotron-3-super-120b-a12b:free',
       messages: messages.map((message) => ({
         role: message.role,
         content: message.content,
