@@ -17,7 +17,10 @@ export default async function ConversationPage({ params }) {
 
   return (
     <div className="flex h-screen bg-[#0B1020] text-slate-100">
-      <SidebarServer activeConversationId={conversationId} />
+      <SidebarServer
+        activeConversationId={conversationId}
+        initialConversations={conversations}
+      />
 
       <ConversationPageClient
         conversationId={conversationId}
