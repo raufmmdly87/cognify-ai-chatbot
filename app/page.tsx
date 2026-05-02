@@ -1,8 +1,5 @@
-export default function Home() {
-  return (
-    <div>
-      <h1>AI Chat</h1>
-      <p>Welcome to the chat app</p>
-    </div>
-  );
+import { redirect } from 'next/navigation';
+
+export default function HomePage() {
+  redirect('/conversations/conv-1');
 }
