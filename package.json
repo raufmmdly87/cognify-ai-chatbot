@@ -1,39 +1,36 @@
 {
-  "name": "cognify-ai-chatbot",
-  "version": "1.0.0",
-  "description": "Course project for Web Application Development (ACS-305).",
-  "main": "index.js",
+  "name": "next-temp",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "prepare": "husky install",
+    "dev": "next dev",
+    "build": "prisma generate && prisma migrate deploy && next build",
+    "start": "next start",
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
-
-   "lint-staged": {
-    "*.{js,mjs,cjs,html,css,json,md}": ["prettier --write"],
-    "*.{js,mjs,cjs}": ["eslint ."]
+  "dependencies": {
+    "@ai-sdk/openai": "^3.0.53",
+    "@ai-sdk/openai-compatible": "^2.0.41",
+    "@ai-sdk/react": "^3.0.162",
+    "@prisma/client": "^6.19.3",
+    "@tanstack/react-query": "^5.97.0",
+    "ai": "^6.0.160",
+    "next": "^16.2.3",
+    "prisma": "^6.19.3",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   },
-
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/raufmmdly87/cognify-ai-chatbot.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/raufmmdly87/cognify-ai-chatbot/issues"
-  },
-  "homepage": "https://github.com/raufmmdly87/cognify-ai-chatbot#readme",
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.0.1",
-    "eslint-config-prettier": "^10.1.8",
-    "globals": "^17.3.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
-    "prettier": "^3.8.1"
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.1",
+    "prettier": "^3.8.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
