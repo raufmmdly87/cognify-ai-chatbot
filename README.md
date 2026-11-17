@@ -4,6 +4,8 @@ A full-stack conversational AI web app built with **Next.js**, **React** and the
 
 Built as a university project to practise LLM integration, API design and full-stack application architecture.
 
+**Live demo:** [cognify-ai-chatbot.vercel.app](https://cognify-ai-chatbot.vercel.app/)
+
 ## Features
 
 - **Streaming responses**: AI replies appear token by token instead of after a long wait
